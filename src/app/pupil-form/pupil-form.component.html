@@ -1,0 +1,73 @@
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let pupil of listOfPupils" (click)="onClick(pupil.id)">{{pupil.name}}</li>
+    </ul>
+    <form [formGroup]="pupilForm">
+        <div class="general-info">
+            <div class="pupil-info">
+                <span class="input-span">
+                    <label>
+                        Name
+                        <input formControlName="name">
+                    </label>
+                </span>
+                <span class="input-span">
+                    <label>
+                        Age
+                        <input formControlName="age">
+                    </label>
+                </span>
+            </div>
+            <div class="pupil-info">
+                <span class="input-span">
+                    <label>
+                        Min sport group
+                        <input formControlName="minSportGroup">
+                    </label>
+                </span>
+                <span class="input-span">
+                    <label>
+                        Max sport group
+                        <input formControlName="maxSportGroup">
+                    </label>
+                </span>
+            </div>
+            <div class="pupil-info">
+                <span class="input-date">
+                    Registration date
+                    <div class="input-group">
+                        <input class="form-control" placeholder="yyyy-mm-dd"
+                        name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" [ngModelOptions]="{standalone: true}">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div class="sport-achivements">
+            <div class="custom-control custom-switch achievements">
+                Sport achievements
+                <div>
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1" (click)="activateAchievements()" [checked]="hasSportAchievements">
+                    <label class="custom-control-label" for="customSwitch1">Enable</label>
+                </div>
+            </div>
+            <div class="sport-disciplines" *ngIf="hasSportAchievements">
+                <button type="button" class="add-button" (click)="addDiscipline()">Add</button>
+                <div *ngFor="let achievement of getSportAchievements()['controls'], let i = index">
+                    <label class="sport-label">
+                        Name
+                        <div>
+                            <input placeholder='Discipline' value={{achievement.value}} (input)="updateControlValue($event, i)">
+                            <button type="button" (click)="deleteDiscipline(i)">Delete</button>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="save-button">
+            <button type="button" [disabled]="pupilForm.invalid" (click)="updateContact(savedPupil.id)">Save</button>
+        </div>
+    </form>
+</div>

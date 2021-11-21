@@ -1,0 +1,84 @@
+.container {
+    padding-top: 15px;
+}
+
+.list-group {
+    margin: auto;
+    width: 250px;
+    text-align: center;
+}
+
+.input {
+    &-span {
+        width: 190px;
+
+        input {
+          width: 100%;
+        }
+    }
+
+    &-date {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.pupil-info {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+button.calendar, button.calendar:active {
+    width: 2.75rem;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAcCAYAAAAEN20fAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEUSURBVEiJ7ZQxToVAEIY/YCHGxN6XGOIpnpaEsBSeQC9ArZbm9TZ6ADyBNzAhQGGl8Riv4BLAWAgmkpBYkH1b8FWT2WK/zJ8ZJ4qiI6XUI3ANnGKWBnht2/ZBDRK3hgVGNsCd7/ui+JkEIrKtqurLpEWaphd933+IyI3LEIdpCYCiKD6HcuOa/nwOa0ScJEnk0BJg0UTUWJRl6RxCYEzEmomsIlPU3IPW+grIAbquy+q6fluy/28RIBeRMwDXdXMgXLj/B2uimRXpui4D9sBeRLKl+1N+L+t6RwbWrZliTTTr1oxYtzVWiTQAcRxvTX+eJMnlUDaO1vpZRO5NS0x48sIwfPc87xg4B04MCzQi8hIEwe4bl1DnFMCN2zsAAAAASUVORK5CYII=') !important;
+    background-repeat: no-repeat;
+    background-size: 23px;
+    background-position: center;
+}
+
+.sport-achivements {
+    display: flex;
+    flex-direction: column;
+}
+
+.achievements {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    padding-left: 0;
+    margin: auto;
+}
+
+.add-button {
+    width: 400px;
+    margin: auto;
+}
+
+.sport-disciplines {
+    width: 400px;
+    margin: auto;
+}
+
+.sport-label {
+    display: flex;
+    flex-direction: column;
+
+    div {
+        display: flex;
+        gap: 10px;
+    }
+
+    input {
+        width: 100%;
+    }
+}
+
+.save-button {
+    display: flex;
+    width: 400px;
+    margin: auto;
+    justify-content: flex-end;
+}
